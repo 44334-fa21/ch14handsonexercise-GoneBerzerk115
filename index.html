@@ -1,13 +1,73 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-	<head> 
-		<title>LASTNAME Chapter14HandsOnExercise</title> 
-		<meta charset="utf-8"> 
-		<style>
-		
-		</style>
-	</head> 
-<body> 
+<!DOCTYPE html>
+<html lang="en">
 
-</body> 
-</html> 
+<head>
+	<title>Morgan Chapter14HandsOnExercise</title>
+	<meta charset="utf-8">
+	<!-- jQuery 1.8 or later, 33 KB -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- Fotorama from CDNJS, 19 KB -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+	<style>
+		input {
+			display: block;
+			margin-bottom: 1em;
+		}
+
+		label {
+			float: left;
+			width: 5em;
+			padding-right: 1em;
+			text-align: right;
+		}
+
+		#submit {
+			margin-left: 7em;
+
+			#details {
+				display: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<h1>JavaScript Form Handling</h1>
+	<form method="post" action="http://webdevbasics.net/scripts/demo.php" onsubmit="return validateForm();">
+		<label for="userName">Name:</label>
+		<input type="text" name="userName" id="userName">
+		<label for="userAge">Age:</label>
+		<input type="text" name="userAge" id="userAge">
+		<label for="userCity">City:</label>
+		<input type="text" name="userCity" id="userCity">
+		<input type="submit" value="Send information" id="submit">
+	</form>
+	</div>
+	<div class="fotorama" data-autoplay="true">
+		<img src="photo1.2.jpg" data-caption="2 Pups Laying on a Couch" alt="2 Pups Laying on a Couch">
+		<img src="photo2.2.jpg" data-caption="2 Pups Looking out a Window" alt="2 Pups Looking out a Window">
+		<img src="photo3.2.jpg" data-caption="2 Pups Sleeping Together" alt="2 Pups Sleeping Together">
+		<img src="photo4.2.jpg" data-caption="Bella Laying on Floor" alt="Bella Laying on Floor">
+		<img src="photo5.2.jpg" data-caption="Reindeer Bella" alt="Reindeer Bella">
+		<img src="photo6.2.jpg" data-caption="Dash Sleeping" alt="Dash Sleeping">
+	</div>
+
+	<script>
+		function validateForm() {
+			if (document.forms[0].userCity.value == "") {
+				alert("City field cannot be empty");
+				return false;
+			}
+			if (document.forms[0].userAge.value < 18) {
+				alert("Age is less than 18. You do not have access")
+				return false;
+			}
+			alert("Name, age, and city are valid");
+			return true;
+		}
+	</script>
+</body>
+
+</html>
